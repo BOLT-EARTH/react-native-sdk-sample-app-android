@@ -10,9 +10,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@boltearth/react-native-sdk": "github:BOLT-EARTH/bolt-earth-react-native-sdk",
+    "@react-native/new-app-screen": "0.85.3",
     "react": "19.2.3",
     "react-native": "0.85.3",
-    "@react-native/new-app-screen": "0.85.3",
     "react-native-safe-area-context": "^5.5.2"
   },
   "devDependencies": {

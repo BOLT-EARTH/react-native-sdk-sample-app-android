@@ -1,5 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "org.jetbrains.kotlin.kapt"
+apply plugin: "com.google.dagger.hilt.android"
 apply plugin: "com.facebook.react"
 
 /**
@@ -85,6 +87,16 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    buildFeatures {
+        dataBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
@@ -107,9 +119,20 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+
+    implementation("com.google.dagger:hilt-android:2.54")
+    kapt("com.google.dagger:hilt-android-compiler:2.54")
+
+    implementation("io.github.boltearth:bolt-earth-ui-sdk:1.0.0") {
+        exclude group: "com.github.theGlenn.flipper-android-no-op", module: "soloadernoop"
+    }
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

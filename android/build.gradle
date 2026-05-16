@@ -1,7 +1,7 @@
 buildscript {
     ext {
         buildToolsVersion = "36.0.0"
-        minSdkVersion = 24
+        minSdkVersion = 26
         compileSdkVersion = 36
         targetSdkVersion = 36
         ndkVersion = "27.1.12297006"
@@ -14,7 +14,28 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.54")
+    }
+}
+
+allprojects {
+    repositories {
+        exclusiveContent {
+            forRepository {
+                maven { url "https://raw.githubusercontent.com/BOLT-EARTH/bolt-earth-android-sdk/main/releases" }
+            }
+            filter {
+                includeGroup "io.github.boltearth"
+            }
+        }
+        maven { url "https://maven.juspay.in/jp-build-packages/hyper-sdk/" }
+        maven {
+            url "https://www.jitpack.io"
+            content {
+                excludeGroup "io.github.boltearth"
+            }
+        }
     }
 }
 
