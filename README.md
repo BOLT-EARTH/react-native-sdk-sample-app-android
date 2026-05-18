@@ -1,8 +1,8 @@
-# This project resembles the implementation and configuration flow of Bolt Earth ui sdk at client side. You have to configure token and bundle identifier(that is registered on Play Store and for which Play Integrity is Enabled) also provide the same to the BOLT.EARTH team to set it up as a valid package. Add the gradle configuration with Play config with which App is released as login attestation is dependant on that.
+## This project resembles the implementation and configuration flow of Bolt Earth ui sdk at client side. You have to configure token and bundle identifier(that is registered on Play Store and for which Play Integrity is Enabled) also provide the same to the BOLT.EARTH team to set it up as a valid package. Add the gradle configuration with Play config with which App is released as login attestation is dependant on that.
 
-# You can check out BoltSdkUserGate.tsx for further changes to the sample app.
+## You can check out BoltSdkUserGate.tsx for further changes to the sample app.
 
-# Getting Started
+## Getting Started
 
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
