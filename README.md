@@ -1,4 +1,12 @@
-## This project resembles the implementation and configuration flow of Bolt Earth ui sdk at client side. You have to configure token and bundle identifier(that is registered on Play Store and for which Play Integrity is Enabled) also provide the same to the BOLT.EARTH team to set it up as a valid package. Add the gradle configuration with Play config with which App is released as login attestation is dependant on that.
+## This sample project resembles the implementation and configuration flow of Bolt Earth UI SDK.
+
+Please configure token and bundle identifier(that is registered on Play Store and for which Play Integrity is Enabled).
+
+Also provide the same to the BOLT.EARTH team to set it up as a valid package. 
+
+Add the gradle configuration with Play config with which App is released as login attestation is dependant on that.
+
+Please also have a look into the way Hilt, Juspay and other dependecies are set up.
 
 ## You can check out BoltSdkUserGate.tsx for further changes to the sample app.
 
